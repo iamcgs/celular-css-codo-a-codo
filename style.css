@@ -18,6 +18,7 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--background);
@@ -28,6 +29,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+main {
+  margin-top: 25px;
 }
 
 .outer {
@@ -233,4 +238,18 @@ body {
   border-bottom-left-radius: 15px;
   top: 200px;
   left: -1px;
+}
+
+/* Footer */
+footer {
+  margin: 10px auto;
+}
+footer p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer a {
+  color: rgb(19, 67, 199);
+  text-decoration: none;
 }
