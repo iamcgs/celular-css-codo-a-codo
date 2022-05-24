@@ -1,0 +1,236 @@
+:root {
+  --background: #f8f9fa;
+  --phone-bg: #e9ecef;
+  --speaker-bg: #443a40;
+  --text: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+}
+
+/* Reusable classes */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer {
+  width: 270px;
+  height: 555px;
+  background: rgb(37, 45, 55);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 45, 55, 1) 0%,
+    rgb(32, 31, 31) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  border-radius: 35px;
+  -webkit-box-shadow: 0px 3px 11px -3px rgba(51, 51, 51, 0.45);
+  -moz-box-shadow: 0px 3px 11px -3px rgba(51, 51, 51, 0.45);
+  box-shadow: 0px 3px 11px -3px rgba(51, 51, 51, 0.45);
+  position: relative;
+}
+
+.inner {
+  width: 250px;
+  height: 535px;
+  background-color: var(--phone-bg);
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  border-radius: 25px;
+  position: relative;
+}
+
+/* Top Icons */
+.top-bar {
+  justify-content: space-between;
+  margin-top: -16px;
+  padding: 0 8px;
+}
+
+.hour-left {
+  font-size: 0.75rem;
+  margin-left: 10px;
+  color: var(--text);
+}
+
+.right-icons {
+  justify-content: space-between;
+}
+
+/* Notch */
+.notch {
+  width: 125px;
+  height: 20px;
+  margin: auto;
+  background: rgb(37, 45, 55);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 45, 55, 1) 40%,
+    rgb(32, 31, 31) 95%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: relative;
+}
+
+.speaker {
+  width: 40px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--speaker-bg);
+  background-image: radial-gradient(#adb5bd 2%, transparent 3%),
+    radial-gradient(#adb5bd 2%, transparent 3%);
+  background-size: 5px 5px;
+  background-repeat: repeat;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-box-shadow: inset 0px 0px 52px -25px rgba(208, 208, 210, 0.25);
+  -moz-box-shadow: inset 0px 0px 52px -25px rgba(208, 208, 210, 0.25);
+  box-shadow: inset 0px 0px 52px -25px rgba(208, 208, 210, 0.25);
+}
+
+.camera {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--speaker-bg);
+  background: linear-gradient(
+    90deg,
+    rgb(122, 123, 125) 0%,
+    rgb(81, 112, 151) 40%,
+    rgb(63, 64, 66) 100%
+  );
+  -webkit-box-shadow: inset 0px 0px 52px -25px rgba(208, 208, 210, 0.25);
+  -moz-box-shadow: inset 0px 0px 52px -25px rgba(208, 208, 210, 0.25);
+  box-shadow: inset 0px 0px 52px -25px rgba(208, 208, 210, 0.25);
+  position: absolute;
+  top: 3px;
+  right: 20%;
+}
+
+/* Screen */
+.locked-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  color: var(--text);
+  text-align: center;
+  margin-top: -20px;
+  padding: 35px 30px;
+}
+
+.clock {
+  color: var(--text);
+  padding-top: 5px;
+  height: 100%;
+}
+
+.hour {
+  font-size: 3.5rem;
+  font-weight: lighter;
+}
+
+.bottom-screen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flashlight-icon,
+.camera-icon {
+  background-color: #343a40af;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.flashlight-icon:hover,
+.camera-icon:hover {
+  background-color: var(--speaker-bg);
+  transform: scale(1.25);
+}
+
+.bottom-bar {
+  width: 100px;
+  height: 4px;
+  border-radius: 25px;
+  background-color: var(--text);
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Side Buttons */
+.side-btn {
+  background: rgb(37, 45, 55);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 45, 55, 1) 40%,
+    rgb(32, 31, 31) 95%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  position: absolute;
+  z-index: -10;
+}
+
+/* Right Button */
+.right-btn {
+  width: 10px;
+  height: 70px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  top: 140px;
+  right: -2px;
+}
+
+/* Left Buttons */
+.silence {
+  width: 10px;
+  height: 25px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  top: 85px;
+  left: -1px;
+}
+
+.volume-up {
+  width: 10px;
+  height: 60px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  top: 135px;
+  left: -1px;
+}
+
+.volume-down {
+  width: 10px;
+  height: 60px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  top: 200px;
+  left: -1px;
+}
